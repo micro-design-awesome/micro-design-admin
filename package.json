@@ -1,0 +1,142 @@
+{
+  "name": "micro-design-admin",
+  "type": "module",
+  "version": "1.0.0",
+  "author": {
+    "name": "microdesign",
+    "email": "luyb@xunzhaotech.com",
+    "url": "https://github.com/micro-design-awesome/micro-design-admin.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.12.0",
+    "pnpm": ">=9.0.2"
+  },
+  "scripts": {
+    "bootstrap": "pnpm i",
+    "serve": "pnpm run dev",
+    "dev": "pnpm run start:dev",
+    "start:dev": "cross-env VITE_APP_ENV=dev vite",
+    "start:production": "cross-env VITE_APP_ENV=dev vite --mode production",
+    "start:pro": "cross-env VITE_APP_ENV=dev vite --mode pro",
+    "build": "cross-env vite build",
+    "build:pro": "cross-env vite build --mode pro",
+    "build:no-cache": "pnpm clean:cache && pnpm run build",
+    "report": "cross-env REPORT=true npm run build",
+    "type:check": "vue-tsc --noEmit --skipLibCheck",
+    "preview": "pnpm run build && vite preview",
+    "preview:dist": "vite preview",
+    "clean:lib": "rimraf pnpm-lock.yaml && rimraf node_modules",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@gx-design-vue/image": "^0.2.0-beta.16",
+    "@gx-design-vue/pro-app": "^0.1.0-beta.11",
+    "@gx-design-vue/pro-card": "^0.2.0-beta.26",
+    "@gx-design-vue/pro-form": "^0.2.0-beta.21",
+    "@gx-design-vue/pro-hooks": "^0.2.0-beta.22",
+    "@gx-design-vue/pro-layout": "^0.1.0-beta.61",
+    "@gx-design-vue/pro-modal": "^0.2.0-beta.15",
+    "@gx-design-vue/pro-provider": "^0.1.0-beta.69",
+    "@gx-design-vue/pro-table": "^0.2.0-beta.49",
+    "@gx-design-vue/pro-utils": "^0.2.0-beta.29",
+    "@gx-design-vue/pro-watermark": "^0.2.0-beta.7",
+    "@gx-design-vue/scrollbar": "^0.2.0-beta.13",
+    "@vueuse/core": "^10.7.2",
+    "@vueuse/shared": "^10.7.2",
+    "ali-oss": "^6.17.1",
+    "ant-design-vue": "^4.2.4",
+    "axios": "^1.7.2",
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.10",
+    "echarts": "^5.2.1",
+    "lodash-es": "^4.17.21",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.2.2",
+    "tinymce": "^5.10.3",
+    "unocss": "^0.62.4",
+    "vue": "^3.5.0",
+    "vue-router": "^4.4.0",
+    "vue-types": "^5.1.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.6.2",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^26.0.24",
+    "@types/lodash-es": "^4.17.10",
+    "@types/mockjs": "^1.0.10",
+    "@types/node": "^20.11.19",
+    "@types/nprogress": "^0.2.0",
+    "@types/qs": "^6.9.7",
+    "@vitejs/plugin-legacy": "^5.4.1",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vitejs/plugin-vue-jsx": "^4.0.0",
+    "autoprefixer": "^10.4.5",
+    "body-parser": "^1.19.0",
+    "bundle-require": "^4.0.1",
+    "chalk": "^4.1.2",
+    "commitizen": "^4.2.4",
+    "connect": "^3.7.0",
+    "conventional-changelog-cli": "^2.1.1",
+    "cross-env": "^7.0.3",
+    "dotenv": "16.0.1",
+    "esbuild": "^0.20.2",
+    "esno": "^0.7.3",
+    "fs-extra": "^10.1.0",
+    "husky": "^7.0.4",
+    "jsdom": "^21.1.0",
+    "less": "^4.1.2",
+    "lint-staged": "12.3.7",
+    "mockjs": "^1.1.0",
+    "path-to-regexp": "^6.2.1",
+    "postcss": "^8.4.35",
+    "postcss-html": "^1.6.0",
+    "postcss-less": "^6.0.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "rollup-plugin-external-globals": "^0.12.0",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "terser": "^5.14.2",
+    "ts-node": "^10.1.0",
+    "typescript": "^5.3.3",
+    "unplugin-auto-import": "^0.18.3",
+    "unplugin-vue-components": "^0.27.4",
+    "vite": "^5.3.2",
+    "vite-plugin-compression": "0.5.1",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-pwa": "^0.19.0",
+    "vite-plugin-vue-devtools": "^7.4.5",
+    "vite-plugin-vue-setup-extend": "0.4.0",
+    "vue-eslint-parser": "^9.4.2",
+    "vue-tsc": "^2.1.6",
+    "yaml": "^2.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --write--parser json"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "prettier --write",
+      "stylelint --fix"
+    ],
+    "*.{scss,less,styl,html}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  }
+}

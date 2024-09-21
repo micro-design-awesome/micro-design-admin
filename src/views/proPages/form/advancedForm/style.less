@@ -1,0 +1,73 @@
+.card {
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+}
+
+.advance-form-block {
+  &:deep(.ant-input-affix-wrapper) {
+    border-radius: 0;
+  }
+}
+
+.footer-bar {
+  position: fixed;
+  inset-inline-end: 0;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding-inline: 24px;
+  padding-block: 0;
+  box-sizing: border-box;
+  height: 49px;
+  line-height: 49px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-block-start: 1px solid rgba(5, 5, 5, 0.06);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  color: rgba(0, 0, 0, 0.88);
+  transition: all 0.2s ease 0s;
+}
+
+.errorIcon {
+  margin-right: 24px;
+  cursor: pointer;
+
+  span.anticon {
+    margin-right: 4px;
+  }
+}
+
+.errorListItem {
+  padding: 8px 16px;
+  list-style: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+  }
+
+  &:last-child {
+    border: 0;
+  }
+
+  .errorIcon {
+    float: left;
+    padding-bottom: 22px;
+    margin-top: 4px;
+    margin-right: 12px;
+  }
+
+  .errorField {
+    margin-top: 2px;
+    font-size: 12px;
+  }
+}
+
+.editable {
+  td {
+    padding-top: 13px !important;
+    padding-bottom: 12.5px !important;
+  }
+}
